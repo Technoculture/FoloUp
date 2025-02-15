@@ -8,7 +8,7 @@ const retellClient = new Retell({
   apiKey: process.env.RETELL_API_KEY || "",
 });
 
-export async function GET(res: Response) {
+export async function GET(req: Request) {
   logger.info("create-interviewer request received");
 
   try {

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: foloup-config
+  namespace: foloup
+data:
+  REDIS_URL: "redis://redis-service.default.svc.cluster.local:6379"
+  REDIS_AVAILABLE: "True"
+  NEXT_PUBLIC_CLERK_SIGN_UP_URL: "/sign-up"
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: "/dashboard"
+  NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: "/dashboard"
+  NEXT_PUBLIC_LIVE_URL: "https://foloup.myella.app"
+
+  # Clerk
+  NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: "pk_test_Y3VycmVudC1idXJyby0zMC5jbGVyay5hY2NvdW50cy5kZXYk"
+  NEXT_PUBLIC_SUPABASE_URL: "https://rutwzyltlibzygycotzc.supabase.co"
+  NEXT_PUBLIC_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1dHd6eWx0bGlienlneWNvdHpjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk2MDk5MzcsImV4cCI6MjA1NTE4NTkzN30.-jai9niFRL38a5FrWN4DG7yf1LwFVW_VgLsc8-u402E"
