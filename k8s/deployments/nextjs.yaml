@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foloup-deployment
+  namespace: foloup
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nextjs
+  template:
+    metadata:
+      labels:
+        app: nextjs
+    spec:
+      imagePullSecrets:
+        - name: regcred2
+      containers:
+        - name: foloup
+          image: registry.myella.app/foloup:2
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NEXT_PUBLIC_LIVE_URL
+              value: "https://foloup.myella.app"
+          envFrom:
+            - configMapRef:
+                name: foloup-config
